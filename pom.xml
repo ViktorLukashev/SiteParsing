@@ -54,7 +54,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.abbott.Main</mainClass>
+                            <mainClass>com.abbott.forexel.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
