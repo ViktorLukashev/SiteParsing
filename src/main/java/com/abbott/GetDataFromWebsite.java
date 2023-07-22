@@ -33,9 +33,4 @@ public class GetDataFromWebsite {
         // Перебор найденных элементов и извлечение данных
         return elements.stream().map(element -> element.text() + "\n").collect(Collectors.joining()); // возвращение результата поиска
     }
-
-
-    public static void main(String[] args) {
-
-    }
 }
