@@ -16,7 +16,7 @@ public class VisualTableExample {
         };
 
         // Заголовки столбцов
-        String[] columnNames = {"<html>First Name</html>", "<html>Last Name</html>", "<html>Age</html>"};
+        String[] columnNames = {"First Name", "Last Name", "Age"};
 
         // Создаем таблицу с данными и заголовками
         JTable table = new JTable(data, columnNames);
@@ -26,7 +26,7 @@ public class VisualTableExample {
         panel.add(new JScrollPane(table), BorderLayout.CENTER);
 
         // Создание кнопки "Выход"
-        JButton exitButton = new JButton("Выход");
+        JButton exitButton = new JButton("Exit");
         exitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
@@ -34,7 +34,7 @@ public class VisualTableExample {
         });
 
         // Добавление кнопки "Выход" вверху панели
-        panel.add(exitButton, BorderLayout.NORTH);
+        panel.add(exitButton, BorderLayout.SOUTH);
 
         // Создание фрейма и добавление панели на него
         JFrame frame = new JFrame("Visual Table Example");
