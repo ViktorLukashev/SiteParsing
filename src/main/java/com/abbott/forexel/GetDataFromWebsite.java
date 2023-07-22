@@ -1,5 +1,6 @@
 package com.abbott.forexel;
 
+import com.abbott.data.DataURL;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -10,11 +11,11 @@ import java.util.stream.Collectors;
 /**
  * Получение данных с вебсайта
  */
-public class GetDataFromWebsite {
+class GetDataFromWebsite {
     private Timer timer;
 
     // Подключение к URL и получение HTML-страницы
-    public Document parseDataFromSite() {
+    protected Document parseDataFromSite() {
         try {
             return Jsoup.connect(DataURL.URLWebSite).get();
         } catch (Exception e) {
@@ -24,7 +25,7 @@ public class GetDataFromWebsite {
     }
 
     // Выполнение поиска нужного элемента
-    public String searchElement() {
+    protected String searchElement() {
         GetDataFromWebsite getDataSite = new GetDataFromWebsite();
 
         // Выполнение поиска нужных элементов

@@ -3,10 +3,10 @@ package com.abbott.forexel;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class UpdateTimer {
+class UpdateTimer {
     private Timer timer = new Timer();
 
-    public void startFetchingData(String t) {
+    protected void startFetchingData(String t) {
         // Создаем таймер и задачу для выполнения кода каждую минуту
 
         TimerTask task = new TimerTask() {
@@ -22,7 +22,7 @@ public class UpdateTimer {
         timer.schedule(task, 0, 60000); // выполнение каждую минуту
     }
 
-    public void stopFetchingData() {
+    protected void stopFetchingData() {
         // Останавливаем таймер
         timer.cancel();
         timer.purge();
