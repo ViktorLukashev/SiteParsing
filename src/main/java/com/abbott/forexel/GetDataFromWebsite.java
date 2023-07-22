@@ -1,23 +1,21 @@
 package com.abbott.forexel;
 
-import com.abbott.data.DataURL;
+import com.abbott.data.DataProgram;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import java.util.Timer;
 import java.util.stream.Collectors;
 
 /**
  * Получение данных с вебсайта
  */
 class GetDataFromWebsite {
-    private Timer timer;
 
     // Подключение к URL и получение HTML-страницы
     protected Document parseDataFromSite() {
         try {
-            return Jsoup.connect(DataURL.URLWebSite).get();
+            return Jsoup.connect(DataProgram.URL_WEB_SITE).get();
         } catch (Exception e) {
             e.printStackTrace();
         }
