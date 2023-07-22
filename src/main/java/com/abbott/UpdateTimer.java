@@ -5,6 +5,7 @@ import java.util.TimerTask;
 
 public class UpdateTimer {
     private Timer timer = new Timer();
+
     public void startFetchingData(String t) {
         // Создаем таймер и задачу для выполнения кода каждую минуту
 

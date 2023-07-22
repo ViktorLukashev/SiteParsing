@@ -5,7 +5,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.util.Timer;
-import java.util.TimerTask;
 import java.util.stream.Collectors;
 
 /**
@@ -34,9 +33,6 @@ public class GetDataFromWebsite {
         // Перебор найденных элементов и извлечение данных
         return elements.stream().map(element -> element.text() + "\n").collect(Collectors.joining()); // возвращение результата поиска
     }
-
-
-
 
 
     public static void main(String[] args) {
