@@ -1,47 +1,40 @@
-package com.abbott.forcommandline;
+package com.abbott.forcommandline.visual;
+
+import com.abbott.data.DataProgram;
+import com.abbott.forcommandline.visual.column.TableSettings;
+
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class VisualTableExample {
-    public static void main(String[] args) {
-        // Данные для таблицы
-        Object[][] data = {
-                {"JohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohn", "Doe", 30},
-                {"Jane", "Smith", 25},
-                {"Robert", "Johnson", 35}
-        };
+public class Table {
+    public void setUp(Object[][] data) {
+        TableSettings tableSettings = new TableSettings();
 
         // Заголовки столбцов
-        String[] columnNames = {"First Name", "Last Name", "Age"};
+        String[] columnNames = tableSettings.columnNames();
 
         // Создаем таблицу с данными и заголовками
         JTable table = new JTable(data, columnNames);
 
-        // Создание панели и добавление таблицы на нее
+        // Создание панели и добавление таблицы в нее
         JPanel panel = new JPanel(new BorderLayout());
         panel.add(new JScrollPane(table), BorderLayout.CENTER);
 
         // Создание кнопки "Выход"
-        JButton exitButton = new JButton("Exit");
-        exitButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        JButton exitButton = new JButton(DataProgram.BUTTON_EXIT);
+        exitButton.addActionListener(e -> System.exit(0));
 
         // Добавление кнопки "Выход" вверху панели
         panel.add(exitButton, BorderLayout.SOUTH);
 
         // Создание фрейма и добавление панели на него
-        JFrame frame = new JFrame("Visual Table Example");
+        JFrame frame = new JFrame(DataProgram.FRAME_TABLE);
         frame.getContentPane().add(panel);
 
         // Установка размеров фрейма и отображение его на экране
-        frame.setSize(650, 400);
+        frame.setSize(DataProgram.SIZE_WINDOW[0], DataProgram.SIZE_WINDOW[1]);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Получение объекта столбца для каждого столбца таблицы
@@ -57,4 +50,5 @@ public class VisualTableExample {
 
         frame.setVisible(true);
     }
+
 }
