@@ -1,4 +1,5 @@
 package com.abbott.forcommandline;
+
 import com.abbott.data.DataProgram;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -13,11 +14,11 @@ public class DataArray {
         Document document = parseDataFromSite();
         if (document != null) {
             Elements elements = document.select(DataProgram.CSS_SELECTOR);
-            elements.stream().map(Element::text).forEach(list::add);
+            elements.stream().map(Element::text).filter(text -> !text.isEmpty()).forEach(list::add);
         }
     }
 
-    private Document parseDataFromSite() {
+    public Document parseDataFromSite() {
         try {
             return Jsoup.connect(DataProgram.URL_WEB_SITE).get();
         } catch (Exception e) {
@@ -25,12 +26,15 @@ public class DataArray {
         }
         return null;
     }
-    private List<String> dataArray() {
+
+    List<String> dataArray() {
         DataArray dataArray = new DataArray();
         List<String> websiteData = new ArrayList<>();
         dataArray.readDataFromWebsite(websiteData);
         return websiteData;
     }
+
+
 
     public static void main(String[] args) {
         DataArray dataArray = new DataArray();
