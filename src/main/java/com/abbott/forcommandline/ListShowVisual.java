@@ -1,7 +1,12 @@
-package com.abbott.forcommandline.visual;
+package com.abbott.forcommandline;
 
-public class Visual {
+import com.abbott.forcommandline.visual.Table;
+
+public class ListShowVisual {
     public static void main(String[] args) {
+        DataArray dataArray = new DataArray();
+        dataArray.dataArray().forEach(System.out::println);
+
         // Данные для таблицы
         Object[][] data = {
                 {"JohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohnJohn", "Doe", 30},
@@ -10,7 +15,5 @@ public class Visual {
         };
         Table table = new Table();
         table.setUp(data);
-
     }
-
 }

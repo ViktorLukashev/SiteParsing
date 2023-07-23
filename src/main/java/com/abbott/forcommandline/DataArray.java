@@ -33,11 +33,4 @@ public class DataArray {
         dataArray.readDataFromWebsite(websiteData);
         return websiteData;
     }
-
-
-
-    public static void main(String[] args) {
-        DataArray dataArray = new DataArray();
-        dataArray.dataArray().forEach(System.out::println);
-    }
 }

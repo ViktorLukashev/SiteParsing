@@ -27,9 +27,10 @@ class GetDataFromWebsite {
         GetDataFromWebsite getDataSite = new GetDataFromWebsite();
 
         // Выполнение поиска нужных элементов
-        Elements elements = getDataSite.parseDataFromSite().select("div");
+        Elements elements = getDataSite.parseDataFromSite().select(DataProgram.CSS_SELECTOR);
 
         // Перебор найденных элементов и извлечение данных
-        return elements.stream().map(element -> element.text() + "\n").collect(Collectors.joining()); // возвращение результата поиска
+        return elements.stream().map(element -> element.text() + "\n")
+                .collect(Collectors.joining()); // возвращение результата поиска
     }
 }
